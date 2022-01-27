@@ -27,5 +27,19 @@ class DatabaseSeeder extends Seeder
         //ahora creo 5 libros y 5 usuarios
         Libro::factory(5)->create();
         User::factory(5)->create();
+        DB::table('users')->insert([
+            'name'=> 'user',
+            'email'=>'a@a.cl',
+            'password'=>'a',
+            'fecha_nacimiento'=>'01-01-2000',
+            'id_rol'=>1,
+        ]);
+        DB::table('users')->insert([
+            'name'=> 'adm',
+            'email'=>'b@b.cl',
+            'password'=>'b',
+            'fecha_nacimiento'=>'01-01-2000',
+            'id_rol'=>2,
+        ]);
     }
 }
